@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+
+nav.mobile-nav {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 75%;
+    max-width: 250px;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1em 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6200ea;
+    font-weight: bold;
+}
+
+#close-btn {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.para-content {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.7rem;
+}
+
+
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1em;
+}
+
+.topic-card {
+    background-color: #6200ea;
+    color: white;
+    padding: 1em;
+    margin: 0.5em;
+    text-align: center;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card:hover {
+    background-color: #4b0ba3;
+}
+
+.topic-card a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.quiz-btn {
+    display: block;
+    margin: 2em auto;
+    padding: 1em 2em;
+    background-color: #03dac6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    min-width: 80%;
+}
+
+.quiz-btn:hover {
+    background-color: #068a7d;
+}
+
+footer {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .topic-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    #menu-toggle {
+        display: block;
+        margin: 1em;
+    }
+
+    nav.mobile-nav {
+        display: block;
+    }
+
+    .topic-card {
+        width: 90%;
+    }
+
+
+
+    .quiz-btn {
+        width: 90%;
+    }
+}

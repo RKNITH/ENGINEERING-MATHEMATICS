@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Topics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Matrix Topics</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Historical Background of Matrix</h2>
+            <p>
+                Cayley, a British mathematician discovered matrices in the year 1860. But it was not until the twentieth
+                century was well advanced that engineers heard of them. A matrix is a rectangular array of numbers.
+                These days, however, such arrays (matrices) have been found to be of great utility in many branches of
+                applied mathematics such as algebraic and differential equations, mechanics, theory of electric
+                circuits, nuclear physics, aerodynamics and astronomy. In many cases, they form the coefficients of
+                linear transformations or systems of linear equations arising, for instance, from electric network,
+                frameworks in mechanics, curve fitting in statistics and transportation problems.
+
+                Matrices of the same size can be added or subtracted element by element. But the rule for matrix
+                multiplication is that two matrices can be multiplied only when the number of columns in the first
+                equals the number of rows in the second. A major application of matrices is to represent linear
+                transformation, that is, generalizations of linear functions such as f(x) = 4x. For example, the
+                rotation of vectors in three dimensional space is a linear transformation. If R is a rotation matrix and
+                v is a column vector (a matrix with only one column) describing the position of a point in space, the
+                product Rv is a column vector describing the position of that point after a rotation. The product of two
+                matrices is a matrix that represents the composition of two linear transformations. Another application
+                of matrices is in the solution of a system of linear equations. If the matrix is square, it is possible
+                to deduce some of its properties by computing its determinant. For example, a square matrix has an
+                inverse if and only if its determinant is not zero. Eigenvalues and eigenvectors provide insight into
+                the geometry of linear transformations.
+
+                Matrices are useful because they enable us to consider an array of many numbers as a single object,
+                denote it by a single symbol, and perform calculations with these symbols in a very compact form. The
+                mathematical shorthand thus obtained is very elegant and powerful and is suitable for various practical
+                engineering problems. It entered engineering mathematics over seventy years ago and is of increasing
+                importance of various engineering branches. Therefore, it is necessary for the young engineers to learn
+                the elements of matrix algebra in order to keep up with the fast development of physics and engineering.
+            </p>
+        </section>
+
+        <section>
+            <h2>Definition of Matrix</h2>
+            <p>A matrix is a rectangular array of numbers arranged in rows and columns.</p>
+            <p>Definition: A set of mn numbers (real or complex) arranged in the form of a rectangular array having m
+                rows and n columns is called an m &times; n matrix.</p>
+            <p>Example:
+                <br>
+                A 2 &times; 3 matrix:
+                <br>
+            <table border="1">
+                <tr>
+                    <td>a<sub>11</sub></td>
+                    <td>a<sub>12</sub></td>
+                    <td>a<sub>13</sub></td>
+                </tr>
+                <tr>
+                    <td>a<sub>21</sub></td>
+                    <td>a<sub>22</sub></td>
+                    <td>a<sub>23</sub></td>
+                </tr>
+            </table>
+            </p>
+        </section>
+
+
+        <section>
+            <h2>Types of Matrix</h2>
+            <h3>Square Matrix</h3>
+            <p>A square matrix is a matrix with the same number of rows and columns.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+
+            <h3>Unit Matrix or Identity Matrix</h3>
+            <p>An identity matrix is a square matrix with 1's on the diagonal and 0's elsewhere.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+            <h3>Null Matrix or Zero Matrix</h3>
+            <p>A null matrix is a matrix in which all the elements are zero.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+
+            <h3>Row Matrix</h3>
+            <p>A row matrix is a matrix that has only one row.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <h3>Column Matrix</h3>
+            <p>A column matrix is a matrix that has only one column.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <h3>Sub-matrix of a Matrix</h3>
+            <p>A sub-matrix is formed by deleting any number of rows and/or columns from a matrix.</p>
+            <p>Example: From matrix</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </table>
+            <p>A sub-matrix could be:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+
+            <h3>Principle Sub-matrix of a Matrix</h3>
+            <p>A principle sub-matrix is a square sub-matrix obtained by deleting certain rows and columns.</p>
+            <p>Example: From matrix</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </table>
+            <p>A principle sub-matrix could be:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+
+            <h3>Equality of Two Matrices</h3>
+            <p>Two matrices are equal if they have the same dimensions and corresponding elements are equal.</p>
+            <p>Example:</p>
+            <p>Matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>Matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>Matrix A and Matrix B are equal.</p>
+
+            <h3>Addition of Matrices</h3>
+            <p>The sum of two matrices is obtained by adding their corresponding elements.</p>
+            <p>Example:</p>
+            <p>Matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>Matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+            </table>
+            <p>Matrix A + Matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>6</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>12</td>
+                </tr>
+            </table>
+            <pre>
+                [1 2]   [3 4]   [1+3 2+4]   [4 6]
+                [5 6] + [7 8] = [5+7 6+8] = [12 14]
+                        </pre>
+
+            <h3>Properties of Addition</h3>
+            <ul>
+                <li>Commutative: A + B = B + A</li>
+                <li>Associative: (A + B) + C = A + (B + C)</li>
+                <li>Existence of additive identity: A + 0 = A</li>
+                <li>Existence of additive inverse: A + (-A) = 0</li>
+            </ul>
+
+            <h3>Subtraction of Matrices</h3>
+            <p>The difference of two matrices is obtained by subtracting their corresponding elements.</p>
+            <p>Example:</p>
+            <p>Matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+            </table>
+            <p>Matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>Matrix A - Matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <pre>
+                [3 4]   [1 2]   [3-1 4-2]   [2 2]
+                [7 8] - [5 6] = [7-5 8-6] = [2 2]
+                        </pre>
+
+            <article>
+                <h3>Multiplication</h3>
+                <p>Matrix multiplication involves multiplying rows of the first matrix by columns of the second matrix
+                    and summing the products. It can only be performed when the number of columns in the first matrix
+                    equals the number of rows in the second matrix.</p>
+                <p>Example:</p>
+                <pre>
+                    [1 2]   [5 6]   [(1*5 + 2*7) (1*6 + 2*8)]   [19 22]
+                    [3 4] * [7 8] = [(3*5 + 4*7) (3*6 + 4*8)] = [43 50]
+                            </pre>
+
+                <div class="inp">
+                    <label for="rows1">Rows in Matrix 1:</label>
+                    <input type="number" id="rows1" min="1" max="10"
+                        onchange="createMatrixInputs('matrix1', 'rows1', 'cols1')">
+                    <label for="cols1">Columns in Matrix 1:</label>
+                    <input type="number" id="cols1" min="1" max="10"
+                        onchange="createMatrixInputs('matrix1', 'rows1', 'cols1')">
+                </div>
+                <div id="matrix1Inputs"></div>
+
+                <div class="inp">
+                    <label for="rows2">Rows in Matrix 2:</label>
+                    <input type="number" id="rows2" min="1" max="10"
+                        onchange="createMatrixInputs('matrix2', 'rows2', 'cols2')">
+                    <label for="cols2">Columns in Matrix 2:</label>
+                    <input type="number" id="cols2" min="1" max="10"
+                        onchange="createMatrixInputs('matrix2', 'rows2', 'cols2')">
+                </div>
+                <div id="matrix2Inputs"></div>
+
+                <button onclick="calculateMultiplication()">Calculate</button>
+                <pre id="result"></pre>
+            </article>
+            <h3>Properties of Multiplication</h3>
+            <ul>
+                <li>Associative: (A &times; B) &times; C = A &times; (B &times; C)</li>
+                <li>Distributive: A &times; (B + C) = A &times; B + A &times; C</li>
+                <li>Non-Commutative: A &times; B ≠ B &times; A (in general)</li>
+                <li>Existence of multiplicative identity: A &times; I = I &times; A = A</li>
+            </ul>
+
+            <h3>Triangular Matrix</h3>
+            <p>A triangular matrix is a square matrix where all the entries above (or below) the main diagonal are zero.
+            </p>
+            <h4>Upper Triangular Matrix</h4>
+            <p>An upper triangular matrix has all the entries below the main diagonal as zero.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>6</td>
+                </tr>
+            </table>
+
+            <h4>Lower Triangular Matrix</h4>
+            <p>A lower triangular matrix has all the entries above the main diagonal as zero.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </table>
+
+            <h3>Diagonal Matrix</h3>
+            <p>A diagonal matrix is a square matrix where all off-diagonal elements are zero.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <h3>Scalar Matrix</h3>
+            <p>A scalar matrix is a diagonal matrix where all the diagonal elements are the same.</p>
+            <p>Example:</p>
+            <table border="1">
+                <tr>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                </tr>
+            </table>
+
+            <h3>Trace of a Matrix</h3>
+            <p>The trace of a matrix is the sum of its diagonal elements.</p>
+            <p>Example: For matrix</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>The trace is 1 + 4 = 5.</p>
+
+            <h3>Properties of Trace</h3>
+            <ul>
+                <li>tr(A + B) = tr(A) + tr(B)</li>
+                <li>tr(kA) = k tr(A) for any scalar k</li>
+                <li>tr(AB) = tr(BA)</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Transpose of a Matrix</h2>
+            <p>The transpose of a matrix is formed by swapping the rows and columns of the matrix.</p>
+
+            <h3>Theory</h3>
+            <p>The transpose of a matrix is an important operation in linear algebra. Given a matrix A, the transpose of
+                A, denoted by A<sup>T</sup> or A', is obtained by converting its rows into columns and its columns into
+                rows. This operation is useful in various mathematical and computational applications.</p>
+
+            <h3>Formula</h3>
+            <p>If A is an m &times; n matrix, then the transpose of A, denoted as A<sup>T</sup>, is an n &times; m
+                matrix given by:</p>
+            <p><strong>A<sup>T</sup> = [a<sub>ji</sub>]</strong></p>
+            <p>where a<sub>ji</sub> is the element in the j-th row and i-th column of the original matrix A.</p>
+            <p>The transpose of (AB) is B<sup>T</sup>A<sup>T</sup>.</p>
+            <h3>Applications</h3>
+            <ul>
+                <li><strong>Solving Linear Equations:</strong> The transpose of a matrix is used in the solution of
+                    systems of linear equations, especially in methods like the Gauss-Jordan elimination and the
+                    calculation of matrix inverses.</li>
+                <li><strong>Computer Graphics:</strong> In computer graphics, the transpose of transformation matrices
+                    is used in various calculations involving rotations, translations, and scaling of objects.</li>
+                <li><strong>Data Analysis:</strong> In data analysis and statistics, the transpose operation is often
+                    used to manipulate data sets, especially when switching between row-major and column-major formats.
+                </li>
+                <li><strong>Symmetric Matrices:</strong> For symmetric matrices, the transpose operation is used to
+                    verify that the matrix remains unchanged when transposed, which is a key property of such matrices.
+                </li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>a<sub>11</sub></td>
+                    <td>a<sub>12</sub></td>
+                    <td>a<sub>13</sub></td>
+                </tr>
+                <tr>
+                    <td>a<sub>21</sub></td>
+                    <td>a<sub>22</sub></td>
+                    <td>a<sub>23</sub></td>
+                </tr>
+                <tr>
+                    <td>a<sub>31</sub></td>
+                    <td>a<sub>32</sub></td>
+                    <td>a<sub>33</sub></td>
+                </tr>
+            </table>
+            <p>The transpose of matrix A, denoted as A<sup>T</sup>, is:</p>
+            <table border="1">
+                <tr>
+                    <td>a<sub>11</sub></td>
+                    <td>a<sub>21</sub></td>
+                    <td>a<sub>31</sub></td>
+                </tr>
+                <tr>
+                    <td>a<sub>12</sub></td>
+                    <td>a<sub>22</sub></td>
+                    <td>a<sub>32</sub></td>
+                </tr>
+                <tr>
+                    <td>a<sub>13</sub></td>
+                    <td>a<sub>23</sub></td>
+                    <td>a<sub>33</sub></td>
+                </tr>
+            </table>
+        </section>
+
+
+
+        <section>
+            <h2>Conjugate of a Matrix</h2>
+            <p>The conjugate of a matrix involves taking the complex conjugate of each entry in the matrix.</p>
+
+            <h3>Theory</h3>
+            <p>The conjugate of a matrix is an important operation in linear algebra, particularly when dealing with
+                complex numbers. Given a matrix A with complex entries, the conjugate of A, denoted by A*, is obtained
+                by taking the complex conjugate of each element in the matrix. The complex conjugate of a number a + bi
+                is a - bi, where i is the imaginary unit.</p>
+
+            <h3>Formula</h3>
+            <p>If A is an m &times; n matrix with complex entries, then the conjugate of A, denoted as A*, is given by:
+            </p>
+            <p><strong>A* = [&#772;a<sub>ij</sub>]</strong></p>
+            <p>where &#772;a<sub>ij</sub> is the complex conjugate of the element a<sub>ij</sub> in the original matrix
+                A.</p>
+
+            <h3>Properies</h3>
+            <p>The conjugate of a matrix A, denoted as A<sup>*</sup>, is obtained by taking the
+                complex conjugate of each element in the matrix.</p>
+
+            <p><strong>Property 1:</strong> The conjugate of the conjugate of a matrix is the matrix itself.</p>
+            <p>Mathematically, (A<sup>*</sup>)<sup>*</sup> = A.</p>
+
+            <p><strong>Property 2:</strong> The conjugate of the sum of two matrices is the sum of their conjugates.</p>
+            <p>Mathematically, (A + B)<sup>*</sup> = A<sup>*</sup> + B<sup>*</sup></p>
+
+            <p><strong>Property 3:</strong> The conjugate of the product of two matrices is the product of their
+                conjugates in reverse order.</p>
+            <p>Mathematically, (AB)<sup>*</sup> = A<sup>*</sup>B<sup>*</sup> </p>
+
+            <p><strong>Property 4:</strong> The conjugate of a scalar multiple of a matrix is the scalar multiple of the
+                conjugate of the matrix.</p>
+            <p>Mathematically, for a scalar c,(cA)<sup>*</sup> = cA<sup>*</sup>.
+            </p>
+
+            <p><strong>Property 5:</strong> The conjugate of the transpose of a matrix is the transpose of the conjugate
+                of the matrix.</p>
+            <p>Mathematically,(A<sup>T</sup>)<sup>*</sup> = (A<sup>*</sup>)<sup>T</sup></p>
+
+            <p><strong>Property 6:</strong> The conjugate of the inverse of a matrix (if it exists) is the inverse of
+                the conjugate of the matrix.</p>
+            <p>Mathematically, (A<sup>-1</sup>)<sup>*</sup> = (A<sup>*</sup>)<sup>-1</sup></p>
+
+            <p><strong>Property 7:</strong> The conjugate of a Hermitian matrix (a matrix that is equal to its own
+                conjugate transpose) is the matrix itself.</p>
+            <p>Mathematically, if A is Hermitian, then A<sup>*</sup> = A</p>
+
+            <p><strong>Property 8:</strong> The conjugate of a unitary matrix (a matrix whose inverse is equal to its
+                conjugate transpose) is also a unitary matrix.</p>
+            <p>Mathematically, if A is unitary, then A<sup>*</sup> is also unitary.</p>
+
+            <h3>Applications</h3>
+            <ul>
+                <li><strong>Quantum Mechanics:</strong> The conjugate transpose (also called the Hermitian transpose) of
+                    matrices is used extensively in quantum mechanics, where it is used to describe operators and
+                    states.</li>
+                <li><strong>Signal Processing:</strong> In signal processing, the conjugate of matrices is used in the
+                    analysis and processing of complex signals, such as those in Fourier transforms and digital filters.
+                </li>
+                <li><strong>Control Theory:</strong> In control theory, the conjugate of matrices is used in the design
+                    and analysis of systems with complex eigenvalues.</li>
+                <li><strong>Mathematics:</strong> The conjugate of matrices is used in various branches of mathematics,
+                    including complex analysis and algebra, for solving systems of linear equations with complex
+                    coefficients.</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>1 + 2i</td>
+                    <td>3 - 4i</td>
+                </tr>
+                <tr>
+                    <td>5 + 6i</td>
+                    <td>-7 + 8i</td>
+                </tr>
+            </table>
+            <p>The conjugate of matrix A, denoted as A*, is:</p>
+            <table border="1">
+                <tr>
+                    <td>1 - 2i</td>
+                    <td>3 + 4i</td>
+                </tr>
+                <tr>
+                    <td>5 - 6i</td>
+                    <td>-7 - 8i</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Transpose Conjugate of a Matrix</h2>
+            <p>The transpose conjugate, also known as the adjoint or Hermitian transpose of a matrix, is the transpose
+                of the conjugate of the matrix.</p>
+
+            <h3>Theory</h3>
+            <p>The transpose conjugate (or adjoint) of a matrix is an important concept in linear algebra, especially
+                when dealing with complex matrices. Given a matrix A with complex entries, the transpose conjugate of A,
+                denoted by A<sup>*</sup> or A<sup>H</sup>, is obtained by taking the conjugate of each element in the
+                matrix and then transposing the resulting matrix.</p>
+
+            <h3>Formula</h3>
+            <p>If A is an m &times; n matrix with complex entries, then the transpose conjugate of A, denoted as
+                A<sup>*</sup> or A<sup>H</sup>, is given by:</p>
+            <p><strong>A<sup>*</sup> = (A<sup>T</sup>)<sup>-</sup> = [&#772;a<sub>ji</sub>]</strong></p>
+            <p>where &#772;a<sub>ji</sub> is the complex conjugate of the element a<sub>ij</sub> in the original matrix
+                A.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>(A<sup>*</sup>)<sup>*</sup> = A:</strong> Taking the transpose conjugate twice returns the
+                    original matrix.</li>
+                <li><strong>(A + B)<sup>*</sup> = A<sup>*</sup> + B<sup>*</sup>:</strong> The transpose conjugate of a
+                    sum is the sum of the transpose conjugates.</li>
+                <li><strong>(cA)<sup>*</sup> = &#772;cA<sup>*</sup>:</strong> The transpose conjugate of a scalar
+                    multiple is the conjugate of the scalar times the transpose conjugate of the matrix.</li>
+                <li><strong>(AB)<sup>*</sup> = B<sup>*</sup>A<sup>*</sup>:</strong> The transpose conjugate of a product
+                    is the product of the transpose conjugates in reverse order.</li>
+                <li><strong>A is Hermitian if A = A<sup>*</sup>:</strong> A matrix is Hermitian if it is equal to its
+                    own transpose conjugate.</li>
+            </ul>
+
+            <h3>Applications</h3>
+            <ul>
+                <li><strong>Quantum Mechanics:</strong> The adjoint of operators is fundamental in quantum mechanics for
+                    defining observables and ensuring Hermitian properties.</li>
+                <li><strong>Signal Processing:</strong> Used in signal processing to handle complex signal
+                    representations and ensuring orthogonality in complex spaces.</li>
+                <li><strong>Mathematics:</strong> In linear algebra, adjoint matrices are used in solving complex
+                    systems of equations and in the spectral decomposition of matrices.</li>
+                <li><strong>Control Theory:</strong> Utilized in control theory for stability analysis and designing
+                    control systems with complex coefficients.</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>1 + 2i</td>
+                    <td>3 - 4i</td>
+                </tr>
+                <tr>
+                    <td>5 + 6i</td>
+                    <td>-7 + 8i</td>
+                </tr>
+            </table>
+            <p>The conjugate of matrix A is:</p>
+            <table border="1">
+                <tr>
+                    <td>1 - 2i</td>
+                    <td>3 + 4i</td>
+                </tr>
+                <tr>
+                    <td>5 - 6i</td>
+                    <td>-7 - 8i</td>
+                </tr>
+            </table>
+            <p>The transpose conjugate (adjoint) of matrix A, denoted as A<sup>*</sup> or A<sup>H</sup>, is:</p>
+            <table border="1">
+                <tr>
+                    <td>1 - 2i</td>
+                    <td>5 - 6i</td>
+                </tr>
+                <tr>
+                    <td>3 + 4i</td>
+                    <td>-7 - 8i</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <section>
+            <h2>Symmetric Matrix, Skew-Symmetric Matrix</h2>
+            <p>A symmetric matrix is equal to its transpose, while a skew-symmetric matrix is equal to the negative of
+                its transpose.</p>
+
+            <h3>Theory</h3>
+            <p>A matrix is an important concept in linear algebra and has applications in various fields including
+                physics, engineering, and computer science. A matrix is called symmetric if it is equal to its
+                transpose. That is, a matrix A is symmetric if A = A<sup>T</sup>. On the other hand, a matrix is called
+                skew-symmetric (or antisymmetric) if it is equal to the negative of its transpose. That is, a matrix A
+                is skew-symmetric if A = -A<sup>T</sup>.</p>
+
+            <h3>Properties</h3>
+            <h4>Symmetric Matrix</h4>
+            <ul>
+                <li><strong>Real Entries:</strong> If A is a symmetric matrix with real entries, then all its
+                    eigenvalues are real.</li>
+                <li><strong>Diagonal Entries:</strong> The diagonal entries of a symmetric matrix can be any real
+                    number.</li>
+                <li><strong>Orthogonal Diagonalization:</strong> A symmetric matrix can be orthogonally diagonalized,
+                    meaning there exists an orthogonal matrix P such that P<sup>T</sup>AP is a diagonal matrix.</li>
+            </ul>
+            <h4>Skew-Symmetric Matrix</h4>
+            <ul>
+                <li><strong>Zero Diagonal:</strong> The diagonal entries of a skew-symmetric matrix are all zero.</li>
+                <li><strong>Complex Conjugate Eigenvalues:</strong> If a skew-symmetric matrix has complex entries, then
+                    its eigenvalues come in complex conjugate pairs (if they are not purely imaginary).</li>
+                <li><strong>Odd Dimensions:</strong> A skew-symmetric matrix of odd dimension has a determinant of zero.
+                </li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <h4>Symmetric Matrix</h4>
+            <p>If A is an n &times; n matrix, then A is symmetric if:</p>
+            <p><strong>A = A<sup>T</sup></strong></p>
+            <h4>Skew-Symmetric Matrix</h4>
+            <p>If A is an n &times; n matrix, then A is skew-symmetric if:</p>
+            <p><strong>A = -A<sup>T</sup></strong></p>
+
+            <h3>Examples</h3>
+            <h4>Symmetric Matrix</h4>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </table>
+            <p>The transpose of matrix A is:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </table>
+            <p>Since A = A<sup>T</sup>, matrix A is symmetric.</p>
+
+            <h4>Skew-Symmetric Matrix</h4>
+            <p>Consider the matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td>-2</td>
+                    <td>0</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>-4</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>The transpose of matrix B is:</p>
+            <table border="1">
+                <tr>
+                    <td>0</td>
+                    <td>-2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td>-1</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>Since B = -B<sup>T</sup>, matrix B is skew-symmetric.</p>
+        </section>
+
+
+        <section>
+            <h2>Hermitian Matrix, Skew-Hermitian Matrix</h2>
+            <p>A Hermitian matrix is equal to its own conjugate transpose, while a skew-Hermitian matrix is equal to the
+                negative of its conjugate transpose.</p>
+
+            <h3>Theory</h3>
+            <p>In complex matrices, a Hermitian matrix is analogous to a real symmetric matrix. It satisfies the
+                property that it is equal to its conjugate transpose. Mathematically, a matrix A with complex entries is
+                Hermitian if:</p>
+            <p><strong>A = A<sup>*</sup></strong></p>
+            <p>where A<sup>*</sup> denotes the conjugate transpose of A. Similarly, a skew-Hermitian matrix satisfies:
+            </p>
+            <p><strong>A = -A<sup>*</sup></strong></p>
+
+            <h3>Properties</h3>
+            <h4>Hermitian Matrix</h4>
+            <ul>
+                <li><strong>Real Eigenvalues:</strong> All eigenvalues of a Hermitian matrix are real.</li>
+                <li><strong>Orthogonal Diagonalization:</strong> A Hermitian matrix can be diagonalized by a unitary
+                    matrix, meaning there exists a unitary matrix U such that U<sup>*</sup>AU is a diagonal matrix.</li>
+                <li><strong>Positive Definite:</strong> A Hermitian matrix is positive definite if all its eigenvalues
+                    are positive.</li>
+                <li><strong>Hermitian Inner Product:</strong> Hermitian matrices are crucial in defining inner products
+                    in complex vector spaces, analogous to dot products in real vector spaces.</li>
+            </ul>
+
+            <h4>Skew-Hermitian Matrix</h4>
+            <ul>
+                <li><strong>Purely Imaginary Eigenvalues:</strong> Eigenvalues of a skew-Hermitian matrix are purely
+                    imaginary or zero.</li>
+                <li><strong>Orthogonal Unitary Diagonalization:</strong> Similar to Hermitian matrices, skew-Hermitian
+                    matrices can be diagonalized by a unitary matrix.</li>
+                <li><strong>Antisymmetric Part:</strong> Skew-Hermitian matrices are used to represent antisymmetric
+                    operators in quantum mechanics and signal processing.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <h4>Hermitian Matrix</h4>
+            <p>If A is an n &times; n matrix, then A is Hermitian if:</p>
+            <p><strong>A = A<sup>*</sup></strong></p>
+            <h4>Skew-Hermitian Matrix</h4>
+            <p>If A is an n &times; n matrix, then A is skew-Hermitian if:</p>
+            <p><strong>A = -A<sup>*</sup></strong></p>
+
+            <h3>Examples</h3>
+            <h4>Hermitian Matrix</h4>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>3 + 0i</td>
+                    <td>2 - 4i</td>
+                </tr>
+                <tr>
+                    <td>2 + 4i</td>
+                    <td>5 + 0i</td>
+                </tr>
+            </table>
+            <p>The conjugate transpose of matrix A is:</p>
+            <table border="1">
+                <tr>
+                    <td>3 - 0i</td>
+                    <td>2 + 4i</td>
+                </tr>
+                <tr>
+                    <td>2 - 4i</td>
+                    <td>5 - 0i</td>
+                </tr>
+            </table>
+            <p>Since A = A<sup>*</sup>, matrix A is Hermitian.</p>
+
+            <h4>Skew-Hermitian Matrix</h4>
+            <p>Consider the matrix B:</p>
+            <table border="1">
+                <tr>
+                    <td>0</td>
+                    <td>-2i</td>
+                </tr>
+                <tr>
+                    <td>2i</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>The conjugate transpose of matrix B is:</p>
+            <table border="1">
+                <tr>
+                    <td>0</td>
+                    <td>2i</td>
+                </tr>
+                <tr>
+                    <td>-2i</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>Since B = -B<sup>*</sup>, matrix B is skew-Hermitian.</p>
+        </section>
+
+
+        <section>
+            <h2>Normal Matrix, Orthogonal Matrix, Unitary Matrix</h2>
+            <p>Normal matrices commute with their conjugate transposes, orthogonal matrices have orthonormal rows and
+                columns, and unitary matrices are the complex analog of orthogonal matrices.</p>
+
+            <h3>Theory</h3>
+            <p>These matrices are fundamental in linear algebra and have important properties related to eigenvalues,
+                diagonalization, and transformations.</p>
+
+            <h3>Normal Matrix</h3>
+            <p>A matrix A is normal if it commutes with its conjugate transpose, that is:</p>
+            <p><strong>AA<sup>*</sup> = A<sup>*</sup>A</strong></p>
+            <p>where A<sup>*</sup> denotes the conjugate transpose of A.</p>
+
+            <h3>Orthogonal Matrix</h3>
+            <p>An orthogonal matrix A satisfies:</p>
+            <p><strong>A<sup>T</sup>A = AA<sup>T</sup> = I</strong></p>
+            <p>where A<sup>T</sup> is the transpose of A, and I is the identity matrix. Orthogonal matrices preserve
+                lengths and angles, analogous to rotations and reflections in Euclidean space.</p>
+
+            <h3>Unitary Matrix</h3>
+            <p>A unitary matrix U satisfies:</p>
+            <p><strong>UU<sup>*</sup> = U<sup>*</sup>U = I</strong></p>
+            <p>where U<sup>*</sup> is the conjugate transpose of U. Unitary matrices preserve the inner product, norm,
+                and are the complex analog of orthogonal matrices.</p>
+
+            <h3>Properties</h3>
+            <h4>Normal Matrix</h4>
+            <ul>
+                <li><strong>Diagonalization:</strong> Every normal matrix can be diagonalized by a unitary matrix.</li>
+                <li><strong>Spectral Theorem:</strong> Normal matrices have a complete set of orthonormal eigenvectors.
+                </li>
+                <li><strong>Spectral Radius:</strong> The spectral radius of a normal matrix is equal to its operator
+                    norm.</li>
+            </ul>
+
+            <h4>Orthogonal Matrix</h4>
+            <ul>
+                <li><strong>Orthogonality:</strong> Orthogonal matrices preserve lengths and angles.</li>
+                <li><strong>Rotation:</strong> Orthogonal matrices represent rotations and reflections in Euclidean
+                    space.</li>
+                <li><strong>Inverse:</strong> The inverse of an orthogonal matrix is its transpose.</li>
+            </ul>
+
+            <h4>Unitary Matrix</h4>
+            <ul>
+                <li><strong>Unitarity:</strong> Unitary matrices preserve the norm and inner product in complex vector
+                    spaces.</li>
+                <li><strong>Diagonalization:</strong> Every unitary matrix can be diagonalized by a unitary matrix.</li>
+                <li><strong>Quantum Mechanics:</strong> Unitary matrices represent unitary operators in quantum
+                    mechanics, ensuring the preservation of probabilities.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <h4>Normal Matrix</h4>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>3</td>
+                    <td>2i</td>
+                </tr>
+                <tr>
+                    <td>-2i</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>Verify that A is normal:</p>
+            <p>A<sup>*</sup> = A<sup>T</sup> =</p>
+            <table border="1">
+                <tr>
+                    <td>3</td>
+                    <td>2i</td>
+                </tr>
+                <tr>
+                    <td>-2i</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>Calculate AA<sup>*</sup> and A<sup>*</sup>A to confirm that AA<sup>*</sup> = A<sup>*</sup>A.</p>
+
+            <h4>Orthogonal Matrix</h4>
+            <p>Consider the orthogonal matrix Q:</p>
+            <table border="1">
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>Verify that Q is orthogonal:</p>
+            <p>Q<sup>T</sup>Q =</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <p>Calculate QQ<sup>T</sup> to confirm that QQ<sup>T</sup> = I.</p>
+
+            <h4>Unitary Matrix</h4>
+            <p>Consider the unitary matrix U:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>i</td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <p>Verify that U is unitary:</p>
+            <p>UU<sup>*</sup> = UU<sup>T</sup> =</p>
+            <table border="1">
+                <tr>
+                    <td>1 + i<sup>2</sup></td>
+                    <td>i + i</td>
+                </tr>
+                <tr>
+                    <td>i + i</td>
+                    <td>1 + i<sup>2</sup></td>
+                </tr>
+            </table>
+            <p>Calculate U<sup>*</sup>U to confirm that U<sup>*</sup>U = I.</p>
+        </section>
+
+
+        <section>
+            <h2>Rank of a Matrix</h2>
+            <p>The rank of a matrix is the maximum number of linearly independent row vectors or column vectors in the
+                matrix.</p>
+
+            <h3>Theory</h3>
+            <p>The rank of a matrix A, denoted as rank(A), is defined as the dimension of the vector space spanned by
+                its rows or columns. It represents the maximum number of linearly independent rows or columns in the
+                matrix.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Dimension:</strong> The rank of a matrix is the dimension of the vector space spanned by its
+                    rows or columns.</li>
+                <li><strong>Row Rank and Column Rank:</strong> For an m × n matrix A, the row rank (number of linearly
+                    independent rows) and the column rank (number of linearly independent columns) are equal.</li>
+                <li><strong>Relation to Null Space:</strong> The rank of a matrix plus the dimension of its null space
+                    equals the number of columns (n) of the matrix. This is expressed by the rank-nullity theorem:
+                    <strong>rank(A) + dim(null(A)) = n</strong>, where null(A) is the null space of A.
+                </li>
+                <li><strong>Equality:</strong> A matrix is of full rank if rank(A) = min(m, n), meaning all rows and
+                    columns are linearly independent.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>The rank of a matrix can be computed using various methods, including:</p>
+            <ul>
+                <li><strong>Row Echelon Form:</strong> The rank is the number of non-zero rows in the row echelon form
+                    of the matrix.</li>
+                <li><strong>Singular Value Decomposition (SVD):</strong> For an m × n matrix A with SVD A =
+                    UΣV<sup>*</sup>, where Σ is a diagonal matrix with singular values σ<sub>1</sub>, σ<sub>2</sub>,
+                    ..., σ<sub>r</sub> (where r = rank(A)), the rank is r.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>6</td>
+                </tr>
+            </table>
+            <p>To find the rank of A:</p>
+            <ol>
+                <li>Convert A to its row echelon form or perform SVD.</li>
+                <li>Count the number of non-zero rows in the row echelon form or the number of non-zero singular values
+                    in the SVD to determine rank(A).</li>
+            </ol>
+            <p>In this example, A has rank 1 because the second row is a scalar multiple of the first row, indicating
+                linear dependence.</p>
+        </section>
+
+
+        <section>
+            <h2>Inverse and Normal Form of a Matrix, Gauss-Jordan Method of Finding the Inverse</h2>
+            <p>The inverse of a matrix is a matrix that, when multiplied with the original matrix, yields the identity
+                matrix. The Gauss-Jordan method is a systematic procedure for finding the inverse.</p>
+
+            <h3>Theory</h3>
+            <p>The inverse of an n × n matrix A, denoted as A<sup>-1</sup>, is defined such that:</p>
+            <p><strong>A A<sup>-1</sup> = A<sup>-1</sup> A = I</strong></p>
+            <p>where I is the n × n identity matrix.</p>
+
+            <p>To find the inverse of a matrix A, several methods can be used, including Gaussian elimination and the
+                Gauss-Jordan method. The Gauss-Jordan method is particularly useful for obtaining the inverse directly
+                through elementary row operations.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Existence:</strong> A matrix A has an inverse if and only if its determinant (det(A)) is
+                    non-zero.</li>
+                <li><strong>Uniqueness:</strong> The inverse of a matrix A, if it exists, is unique.</li>
+                <li><strong>Matrix Product:</strong> (A<sup>-1</sup>)<sup>-1</sup> = A</li>
+                <li><strong>Transpose of Inverse:</strong> (A<sup>-1</sup>)<sup>T</sup> = (A<sup>T</sup>)<sup>-1</sup>
+                </li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To find the inverse of an n × n matrix A using the Gauss-Jordan method:</p>
+            <ol>
+                <li>Augment matrix A with the n × n identity matrix I to form [A | I].</li>
+                <li>Perform row operations to transform matrix [A | I] into [I | A<sup>-1</sup>].</li>
+                <li>If A is invertible, matrix [I | A<sup>-1</sup>] will represent A<sup>-1</sup>.</li>
+                <li><strong>(AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup>:</strong> The inverse of a product of two
+                    matrices is the product of their inverses in reverse order.</li>
+            </ol>
+
+            <h3>Examples</h3>
+            <p>Consider the matrix A:</p>
+            <table border="1">
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            </table>
+            <p>To find the inverse of A using the Gauss-Jordan method:</p>
+            <ol>
+                <li>Augment A with the identity matrix:</li>
+                <table border="1">
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <li>Perform row operations to obtain the identity matrix on the left side:</li>
+                <table border="1">
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1/2</td>
+                        <td>-1/2</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>-2</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <li>The matrix on the right side is the inverse of A:</li>
+                <table border="1">
+                    <tr>
+                        <td>1/2</td>
+                        <td>-1/2</td>
+                    </tr>
+                    <tr>
+                        <td>-2</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </ol>
+        </section>
+
+
+        <section>
+            <h2>Vectors and Linear Dependence</h2>
+            <p>Vectors are quantities defined by both a magnitude and a direction. A set of vectors is linearly
+                dependent if one of the vectors can be written as a linear combination of the others.</p>
+
+            <h3>Theory</h3>
+            <p>In mathematics, a vector is a geometric object that has magnitude (length) and direction. Vectors are
+                commonly represented as column matrices or directed line segments in space. A set of vectors
+                {v<sub>1</sub>, v<sub>2</sub>, ..., v<sub>n</sub>} is said to be linearly dependent if there exist
+                scalars (not all zero) c<sub>1</sub>, c<sub>2</sub>, ..., c<sub>n</sub> such that:</p>
+            <p><strong>c<sub>1</sub>v<sub>1</sub> + c<sub>2</sub>v<sub>2</sub> + ... + c<sub>n</sub>v<sub>n</sub> =
+                    0</strong></p>
+            <p>where 0 represents the zero vector.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Linear Independence:</strong> A set of vectors is linearly independent if the only solution
+                    to the equation c<sub>1</sub>v<sub>1</sub> + c<sub>2</sub>v<sub>2</sub> + ... +
+                    c<sub>n</sub>v<sub>n</sub> = 0 is c<sub>1</sub> = c<sub>2</sub> = ... = c<sub>n</sub> = 0.</li>
+                <li><strong>Basis:</strong> A basis for a vector space is a set of linearly independent vectors that
+                    span the entire space.</li>
+                <li><strong>Dimension:</strong> The dimension of a vector space is the number of vectors in any basis
+                    for the space.</li>
+                <li><strong>Rank:</strong> The rank of a matrix is the dimension of the vector space spanned by its
+                    column vectors.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To check if a set of vectors {v<sub>1</sub>, v<sub>2</sub>, ..., v<sub>n</sub>} is linearly dependent,
+                solve the equation c<sub>1</sub>v<sub>1</sub> + c<sub>2</sub>v<sub>2</sub> + ... +
+                c<sub>n</sub>v<sub>n</sub> = 0 and determine if the only solution is c<sub>1</sub> = c<sub>2</sub> = ...
+                = c<sub>n</sub> = 0.</p>
+
+            <h3>Examples</h3>
+            <p>Consider the vectors v<sub>1</sub> = (1, 2, 3), v<sub>2</sub> = (2, 4, 6), and v<sub>3</sub> = (1, 0, 1).
+            </p>
+            <p>To determine if these vectors are linearly dependent:</p>
+            <ul>
+                <li>Form the equation c<sub>1</sub>(1, 2, 3) + c<sub>2</sub>(2, 4, 6) + c<sub>3</sub>(1, 0, 1) = (0, 0,
+                    0).</li>
+                <li>Solve for c<sub>1</sub>, c<sub>2</sub>, and c<sub>3</sub> to check if there exist non-zero
+                    solutions.</li>
+                <li>In this example, v<sub>2</sub> = 2v<sub>1</sub> and v<sub>3</sub> = v<sub>1</sub> + v<sub>2</sub>,
+                    indicating that the vectors are linearly dependent.</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Consistency of Linear System of Equations</h2>
+            <p>A linear system is consistent if it has at least one solution; otherwise, it is inconsistent.</p>
+
+            <h3>Theory</h3>
+            <p>In mathematics, a system of linear equations is represented as:</p>
+            <p><strong>Ax = b</strong></p>
+            <p>where A is an m × n coefficient matrix, x is an n × 1 column vector of variables, and b is an m × 1
+                column vector of constants. The system is consistent if there exists at least one solution vector x that
+                satisfies all equations in the system.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Existence of Solutions:</strong> A linear system is consistent if and only if the rank of
+                    the augmented matrix [A | b] is equal to the rank of A. If rank([A | b]) < rank(A), the system is
+                        inconsistent.</li>
+                <li><strong>Types of Solutions:</strong> A consistent system can have a unique solution, infinitely many
+                    solutions (parametric solutions), or a zero solution (trivial solution).</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To determine the consistency of a linear system Ax = b:</p>
+            <ul>
+                <li>Form the augmented matrix [A | b].</li>
+                <li>Calculate the rank of matrix A and the rank of [A | b].</li>
+                <li>If rank([A | b]) = rank(A), the system is consistent. Otherwise, it is inconsistent.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <p>Consider the linear system:</p>
+            <p>2x + y = 5</p>
+            <p>4x + 2y = 10</p>
+            <p>To determine if this system is consistent:</p>
+            <ul>
+                <li>Write the augmented matrix: [2 1 | 5; 4 2 | 10].</li>
+                <li>Calculate the rank of matrix A (coefficient matrix): rank(A) = 1.</li>
+                <li>Calculate the rank of the augmented matrix [A | b]: rank([A | b]) = 1.</li>
+                <li>Since rank([A | b]) = rank(A), the system is consistent.</li>
+                <li>Find the solution: x = 2, y = 1.</li>
+            </ul>
+        </section>
+
+
+
+        <section>
+            <h2>Linear and Orthogonal Transformations</h2>
+            <p>Linear transformations preserve vector addition and scalar multiplication. Orthogonal transformations
+                preserve the inner product.</p>
+
+            <h3>Theory</h3>
+            <p>In mathematics, a linear transformation T from a vector space V to a vector space W is a function that
+                satisfies two properties:</p>
+            <ol>
+                <li>Preservation of vector addition: T(u + v) = T(u) + T(v) for all vectors u, v in V.</li>
+                <li>Preservation of scalar multiplication: T(kv) = kT(v) for all scalar k and vector v in V.</li>
+            </ol>
+            <p>An orthogonal transformation is a linear transformation that preserves the dot product (inner product) of
+                vectors. If T is an orthogonal transformation, then:</p>
+            <p><strong>&lt;T(v), T(w)&gt; = &lt;v, w&gt;</strong> for all vectors v, w in V, where &lt;., .&gt; denotes
+                the inner product.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Matrix Representation:</strong> A linear transformation T can be represented by a matrix A
+                    such that T(v) = Av for all v in V. The columns of matrix A are the images of the basis vectors of V
+                    under T.</li>
+                <li><strong>Orthogonality:</strong> If T is an orthogonal transformation, its matrix representation A
+                    satisfies A<sup>T</sup>A = I, where I is the identity matrix. This implies that A<sup>-1</sup> =
+                    A<sup>T</sup>, making A an orthogonal matrix.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To determine if a transformation T is linear, verify if it satisfies the properties of preservation of
+                vector addition and scalar multiplication.</p>
+            <p>To determine if a linear transformation T is orthogonal, check if it preserves the inner product
+                &lt;T(v), T(w)&gt; = &lt;v, w&gt; for all v, w in V.</p>
+
+            <h3>Examples</h3>
+            <p>Consider the linear transformation T: R<sup>2</sup> &#8594; R<sup>2</sup> defined by T(x, y) = (2x + y, x
+                - y).</p>
+            <ul>
+                <li>Verify if T is linear:</li>
+                <ul>
+                    <li>T((x<sub>1</sub>, y<sub>1</sub>) + (x<sub>2</sub>, y<sub>2</sub>)) = T(x<sub>1</sub> +
+                        x<sub>2</sub>, y<sub>1</sub> + y<sub>2</sub>) = (2(x<sub>1</sub> + x<sub>2</sub>) +
+                        (y<sub>1</sub> + y<sub>2</sub>), (x<sub>1</sub> + x<sub>2</sub>) - (y<sub>1</sub> +
+                        y<sub>2</sub>)) = (2x<sub>1</sub> + y<sub>1</sub> + 2x<sub>2</sub> + y<sub>2</sub>,
+                        x<sub>1</sub> - y<sub>1</sub> + x<sub>2</sub> - y<sub>2</sub>) = (2x<sub>1</sub> +
+                        y<sub>1</sub>, x<sub>1</sub> - y<sub>1</sub>) + (2x<sub>2</sub> + y<sub>2</sub>, x<sub>2</sub> -
+                        y<sub>2</sub>) = T(x<sub>1</sub>, y<sub>1</sub>) + T(x<sub>2</sub>, y<sub>2</sub>).</li>
+                    <li>T(k(x, y)) = T(kx, ky) = (2kx + ky, kx - ky) = k(2x + y, x - y) = kT(x, y).</li>
+                    <li>Therefore, T is linear.</li>
+                </ul>
+                <li>Check if T is orthogonal:</li>
+                <ul>
+                    <li>Compute &lt;T(x, y), T(z, w)&gt; = (2x + y)(2z + w) + (x - y)(z - w).</li>
+                    <li>Compute &lt;(x, y), (z, w)&gt; = xz + yw.</li>
+                    <li>If &lt;T(x, y), T(z, w)&gt; = &lt;(x, y), (z, w)&gt; for all (x, y), (z, w) in R<sup>2</sup>,
+                        then T is orthogonal.</li>
+                </ul>
+            </ul>
+        </section>
+
+
+
+
+
+        <section>
+            <h2>Characteristic Equation, Eigenvalue, Eigenvector, Orthogonal Vectors</h2>
+            <p>The characteristic equation is derived from a square matrix and its eigenvalues. Eigenvalues and
+                eigenvectors are key in analyzing linear transformations. Orthogonal vectors have a dot product of zero.
+            </p>
+
+            <h3>Theory</h3>
+            <p>For a square matrix A, the characteristic equation is:</p>
+            <p><strong>det(A - λI) = 0</strong></p>
+            <p>where λ is an eigenvalue of A, and I is the identity matrix. The solutions to this equation are the
+                eigenvalues of A.</p>
+            <p>An eigenvector v corresponding to an eigenvalue λ of A satisfies the equation:</p>
+            <p><strong>Av = λv</strong></p>
+            <p>Eigenvectors represent directions in which the linear transformation represented by A acts by scalar
+                multiplication.</p>
+            <p>Orthogonal vectors u and v satisfy:</p>
+            <p><strong>u ⋅ v = 0</strong></p>
+            <p>where ⋅ denotes the dot product, indicating that u and v are perpendicular to each other.</p>
+
+            <h3>Formulas</h3>
+            <ul>
+                <li><strong>Characteristic Equation:</strong> det(A - λI) = 0, where A is an n × n matrix, λ are
+                    eigenvalues, and I is the n × n identity matrix.</li>
+                <li><strong>Eigenvalue Equation:</strong> Av = λv, where v is an eigenvector corresponding to eigenvalue
+                    λ of matrix A.</li>
+                <li><strong>Orthogonality:</strong> Two vectors u and v are orthogonal if u ⋅ v = 0.</li>
+            </ul>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Multiplicity:</strong> An eigenvalue λ may have a multiplicity greater than 1, indicating
+                    the algebraic multiplicity.</li>
+                <li><strong>Eigenspace:</strong> The set of all eigenvectors corresponding to a particular eigenvalue
+                    forms an eigenspace.</li>
+                <li><strong>Orthogonal Complement:</strong> The orthogonal complement of a vector space V with respect
+                    to inner product is the set of all vectors orthogonal to V.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <p>Consider the matrix A = [[2, -1], [4, 3]].</p>
+            <ul>
+                <li>Find the eigenvalues by solving det(A - λI) = 0:</li>
+                <p>det([[2 - λ, -1], [4, 3 - λ]]) = 0</p>
+                <p>(2 - λ)(3 - λ) - (-1)(4) = 0</p>
+                <p>λ<sup>2</sup> - 5λ + 10 = 0</p>
+                <p>Solving this quadratic equation gives λ = 2 ± i.</p>
+                <li>Find the corresponding eigenvectors:</li>
+                <p>For λ = 2, solve (A - 2I)v = 0.</p>
+                <p>For λ = 2, eigenvector v = [1, 2].</p>
+                <p>For λ = 2, eigenvector v = [1, 2].</p>
+                <li>Determine if vectors u = [1, 0] and v = [0, 1] are orthogonal:</li>
+                <p>u ⋅ v = 1 * 0 + 0 * 1 = 0, therefore u and v are orthogonal.</p>
+            </ul>
+        </section>
+
+
+
+
+        <section>
+            <h2>Cayley-Hamilton Theorem</h2>
+            <p>The Cayley-Hamilton theorem states that every square matrix satisfies its own characteristic equation.
+            </p>
+
+            <h3>Theory</h3>
+            <p>For a square matrix A of size n × n, the Cayley-Hamilton theorem asserts that:</p>
+            <p><strong>p(A) = 0</strong></p>
+            <p>where p(λ) is the characteristic polynomial of A, and A<sup>k</sup> denotes the kth power of A.</p>
+            <p>The characteristic polynomial p(λ) of matrix A is given by:</p>
+            <p><strong>p(λ) = det(A - λI)</strong></p>
+            <p>Thus, substituting A for λ in its characteristic polynomial gives the zero matrix.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Application:</strong> The theorem is useful in simplifying calculations involving powers and
+                    functions of matrices.</li>
+                <li><strong>Implications:</strong> It implies that matrices can be expressed as linear combinations of
+                    their powers up to n-1.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>The Cayley-Hamilton theorem can be stated formally as:</p>
+            <p><strong>A<sup>n</sup> + c<sub>n-1</sub>A<sup>n-1</sup> + ... + c<sub>1</sub>A + c<sub>0</sub>I =
+                    0</strong></p>
+            <p>where c<sub>i</sub> are coefficients from the characteristic polynomial of A.</p>
+
+            <h3>Examples</h3>
+            <p>Consider the matrix A = [[2, -1], [4, 3]].</p>
+            <ul>
+                <li>Find the characteristic polynomial p(λ) = det(A - λI):</li>
+                <p>det([[2 - λ, -1], [4, 3 - λ]]) = (2 - λ)(3 - λ) - (-1)(4) = λ<sup>2</sup> - 5λ + 10.</p>
+                <li>By the Cayley-Hamilton theorem, A satisfies its characteristic equation:</li>
+                <p>A<sup>2</sup> - 5A + 10I = 0.</p>
+                <li>Verify with specific values:</li>
+                <p>A<sup>2</sup> = [[2, -1], [4, 3]] * [[2, -1], [4, 3]] = [[0, 0], [0, 0]], and 5A = 5 * [[2, -1], [4,
+                    3]] = [[10, -5], [20, 15]].</p>
+                <p>Thus, A<sup>2</sup> - 5A + 10I = [[0, 0], [0, 0]] - [[10, -5], [20, 15]] + [[10, 0], [0, 10]] = [[0,
+                    0], [0, 0]].</p>
+            </ul>
+        </section>
+
+
+
+
+        <section>
+            <h2>Reduction to Diagonal Form</h2>
+            <p>Reduction to diagonal form involves finding a diagonal matrix that is similar to the original matrix.</p>
+
+            <h3>Theory</h3>
+            <p>A square matrix A of size n × n can be transformed into a diagonal matrix D = P<sup>-1</sup>AP, where P
+                is an invertible matrix (change of basis matrix).</p>
+            <p>This process is known as diagonalization. The diagonal matrix D will have the eigenvalues of A along its
+                main diagonal, and its off-diagonal elements will be zero.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Spectral Theorem:</strong> Every symmetric matrix can be diagonalized.</li>
+                <li><strong>Real Eigenvalues:</strong> A real matrix with n distinct real eigenvalues can be
+                    diagonalized by a real orthogonal matrix.</li>
+                <li><strong>Similarity Transformation:</strong> If A is similar to D (A ~ D), then A and D share the
+                    same eigenvalues.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To diagonalize matrix A:</p>
+            <ol>
+                <li>Find the eigenvalues of A.</li>
+                <li>Find the eigenvectors corresponding to each eigenvalue.</li>
+                <li>Construct matrix P with the eigenvectors as columns.</li>
+                <li>Form the diagonal matrix D = P<sup>-1</sup>AP.</li>
+            </ol>
+
+            <h3>Examples</h3>
+            <p>Consider the matrix A = [[3, 1], [1, 3]].</p>
+            <ul>
+                <li>Find the eigenvalues of A:</li>
+                <p>Characteristic polynomial: det([[3 - λ, 1], [1, 3 - λ]]) = λ<sup>2</sup> - 6λ + 8 = (λ - 4)(λ - 2).
+                </p>
+                <p>Eigenvalues: λ<sub>1</sub> = 4, λ<sub>2</sub> = 2.</p>
+                <li>Find the eigenvectors:</li>
+                <p>For λ<sub>1</sub> = 4, solve (A - 4I)v = 0: [1, -1].</p>
+                <p>For λ<sub>2</sub> = 2, solve (A - 2I)v = 0: [1, 1].</p>
+                <li>Construct matrix P:</li>
+                <p>P = [[1, 1], [-1, 1]].</p>
+                <li>Diagonalize A:</li>
+                <p>Calculate P<sup>-1</sup> and D = P<sup>-1</sup>AP:</p>
+                <p>P<sup>-1</sup> = [[0.5, -0.5], [0.5, 0.5]], D = [[4, 0], [0, 2]].</p>
+                <li>Verify:</li>
+                <p>P<sup>-1</sup>AP = [[4, 0], [0, 2]], which is a diagonal matrix with eigenvalues 4 and 2.</p>
+            </ul>
+        </section>
+
+
+
+
+
+        <section>
+            <h2>Reduction of Quadratic Form to Canonical Form</h2>
+            <p>Quadratic forms can be reduced to canonical form to simplify their analysis and classification.</p>
+
+            <h3>Theory</h3>
+            <p>A quadratic form Q(x) in n variables can be represented as:</p>
+            <p><strong>Q(x) = x<sup>T</sup> Ax</strong></p>
+            <p>where x is a column vector, A is a symmetric matrix, and x<sup>T</sup> denotes the transpose of x.</p>
+            <p>To simplify the analysis of quadratic forms, one can perform a change of variables to eliminate the
+                cross-product terms and scale the coefficients, resulting in a canonical form.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Canonical Form:</strong> The canonical form of a quadratic form is typically expressed as a
+                    sum of squares of variables, possibly with a linear term.</li>
+                <li><strong>Classification:</strong> Canonical forms help classify quadratic forms into types such as
+                    positive definite, negative definite, semi-definite, etc.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To reduce a quadratic form Q(x) to canonical form:</p>
+            <ol>
+                <li>Express Q(x) = x<sup>T</sup> Ax.</li>
+                <li>Find the eigenvalues and eigenvectors of matrix A.</li>
+                <li>Construct a transformation matrix P using the eigenvectors.</li>
+                <li>Transform x to a new variable y = Px.</li>
+                <li>Under the transformation, Q(x) becomes a sum of squares of variables in y.</li>
+            </ol>
+
+            <h3>Examples</h3>
+            <p>Consider the quadratic form Q(x, y) = 3x<sup>2</sup> + 4xy + 5y<sup>2</sup>.</p>
+            <ul>
+                <li>Write Q(x, y) in matrix form: Q(x, y) = [x, y] [[3, 2], [2, 5]] [x, y]<sup>T</sup>.</li>
+                <li>Find the eigenvalues and eigenvectors of matrix A = [[3, 2], [2, 5]]:</li>
+                <p>Eigenvalues λ<sub>1</sub> = 1, λ<sub>2</sub> = 7; corresponding eigenvectors v<sub>1</sub> = [1, -1],
+                    v<sub>2</sub> = [1, 1].</p>
+                <li>Construct matrix P = [v<sub>1</sub>, v<sub>2</sub>] = [[1, 1], [-1, 1]].</li>
+                <li>Transform x and y to new variables u and v using P: [u, v]<sup>T</sup> = P [x, y]<sup>T</sup>.</li>
+                <li>Under the transformation, Q(x, y) = 3u<sup>2</sup> + 7v<sup>2</sup>.</li>
+                <li>Thus, Q(x, y) is reduced to canonical form.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Nature, Index, Signature of Quadratic Form</h2>
+            <p>The nature, index, and signature of a quadratic form provide information about its definiteness and the
+                number of positive, negative, and zero eigenvalues.</p>
+
+            <h3>Theory</h3>
+            <p>A quadratic form Q(x) in n variables can be represented as:</p>
+            <p><strong>Q(x) = x<sup>T</sup> Ax</strong></p>
+            <p>where x is a column vector, A is a symmetric matrix, and x<sup>T</sup> denotes the transpose of x.</p>
+            <p>The nature of Q(x) refers to whether it is positive definite, negative definite, positive semi-definite,
+                negative semi-definite, or indefinite.</p>
+            <p>The index of Q(x) is the number of positive eigenvalues minus the number of negative eigenvalues.</p>
+            <p>The signature of Q(x) is a tuple (p, q), where p is the number of positive eigenvalues and q is the
+                number of negative eigenvalues.</p>
+
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>Definiteness:</strong> A quadratic form is positive definite if all eigenvalues are
+                    positive, negative definite if all eigenvalues are negative, semi-definite if some eigenvalues are
+                    zero, and indefinite if it has both positive and negative eigenvalues.</li>
+                <li><strong>Index:</strong> The index provides a measure of the number of positive and negative
+                    directions of the quadratic form.</li>
+                <li><strong>Signature:</strong> The signature categorizes the definiteness based on the count of
+                    positive and negative eigenvalues.</li>
+            </ul>
+
+            <h3>Formulas</h3>
+            <p>To determine the nature, index, and signature:</p>
+            <ol>
+                <li>Find the eigenvalues of matrix A.</li>
+                <li>Count the number of positive, negative, and zero eigenvalues.</li>
+                <li>Based on the counts:
+                    <ul>
+                        <li>If all eigenvalues are positive, Q(x) is positive definite.</li>
+                        <li>If all eigenvalues are negative, Q(x) is negative definite.</li>
+                        <li>If there are zero eigenvalues, Q(x) is semi-definite.</li>
+                        <li>If there are both positive and negative eigenvalues, Q(x) is indefinite.</li>
+                    </ul>
+                </li>
+                <li>Compute the index as (# of positive eigenvalues) - (# of negative eigenvalues).</li>
+                <li>Compute the signature as a tuple (p, q), where p is the count of positive eigenvalues and q is the
+                    count of negative eigenvalues.</li>
+            </ol>
+
+            <h3>Examples</h3>
+            <p>Consider the quadratic form Q(x, y) = 3x<sup>2</sup> + 4xy + 5y<sup>2</sup>.</p>
+            <ul>
+                <li>Write Q(x, y) in matrix form: Q(x, y) = [x, y] [[3, 2], [2, 5]] [x, y]<sup>T</sup>.</li>
+                <li>Find the eigenvalues of matrix A = [[3, 2], [2, 5]]:</li>
+                <p>Eigenvalues λ<sub>1</sub> = 1, λ<sub>2</sub> = 7; corresponding eigenvectors v<sub>1</sub> = [1, -1],
+                    v<sub>2</sub> = [1, 1].</p>
+                <li>Determine the nature, index, and signature:</li>
+                <p>- Q(x, y) has eigenvalues λ<sub>1</sub> = 1 (positive) and λ<sub>2</sub> = 7 (positive), indicating
+                    positive definiteness.</p>
+                <p>- Index: 2 positive eigenvalues, 0 negative eigenvalues, so index = 2.</p>
+                <p>- Signature: (2, 0), indicating two positive eigenvalues and no negative eigenvalues.</p>
+                <li>Thus, Q(x, y) is positive definite with index 2 and signature (2, 0).</li>
+            </ul>
+        </section>
+
+        <section id="determinant">
+            <h2>Determinant of a Matrix</h2>
+            <p>The determinant is a scalar value that can be computed from the elements of a square matrix. It is a
+                useful value in linear algebra and has many applications in areas such as systems of linear equations,
+                geometry, and calculus.</p>
+
+            <h3>Theory:</h3>
+            <p>The determinant of a 2x2 matrix:</p>
+            <pre>
+        A = [a b]
+            [c d]
+            
+        det(A) = ad - bc
+            </pre>
+
+            <p>The determinant of a 3x3 matrix:</p>
+            <pre>
+        A = [a b c]
+            [d e f]
+            [g h i]
+            
+        det(A) = a(ei - fh) - b(di - fg) + c(dh - eg)
+            </pre>
+
+            <p>For larger matrices, the determinant can be calculated using a method called expansion by minors or using
+                row reduction techniques.</p>
+
+            <h3>Properties of Determinants:</h3>
+            <ul>
+                <li><strong>Det(A) = Det(A<sup>T</sup>):</strong> The determinant of a matrix is equal to the
+                    determinant of its transpose.</li>
+                <li><strong>Det(AB) = Det(A) * Det(B):</strong> The determinant of the product of two matrices is the
+                    product of their determinants.</li>
+                <li><strong>If A is a triangular matrix:</strong> The determinant of a triangular matrix (upper or
+                    lower) is the product of its diagonal elements.</li>
+                <li><strong>Det(A<sup>-1</sup>) = 1/Det(A):</strong> The determinant of the inverse of a matrix is the
+                    reciprocal of the determinant of the matrix.</li>
+                <li><strong>If A has a row or column of zeros:</strong> The determinant of the matrix is zero.</li>
+                <li><strong>If two rows or columns of A are identical:</strong> The determinant of the matrix is zero.
+                </li>
+                <li><strong>Row operations effect on determinant:</strong>
+                    <ul>
+                        <li>Swapping two rows or columns changes the sign of the determinant.</li>
+                        <li>Multiplying a row by a scalar multiplies the determinant by that scalar.</li>
+                        <li>Adding a multiple of one row to another row does not change the determinant.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Applications of Determinants:</h3>
+            <ul>
+                <li><strong>Solving Systems of Linear Equations:</strong> Determinants are used in Cramer's Rule to
+                    solve systems of linear equations.</li>
+                <li><strong>Calculating Inverses:</strong> The inverse of a matrix can be computed using determinants.
+                </li>
+                <li><strong>Finding Area and Volume:</strong> Determinants are used to calculate areas and volumes in
+                    geometry.</li>
+                <li><strong>Eigenvalues:</strong> Determinants are used to find the eigenvalues of a matrix.</li>
+            </ul>
+
+            <h3>Calculate Determinant:</h3>
+            <div>
+                <label for="detMatrix">Enter Square Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="detMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateDeterminant()">Calculate Determinant</button>
+            <pre id="detResult"></pre>
+        </section>
+        <section id="cramers-rule">
+            <h2>Cramer's Rule</h2>
+            <p>Cramer's Rule is a mathematical theorem used to solve systems of linear equations with an equal number of
+                equations and unknowns, using determinants. It provides an explicit formula for the solution of the
+                system in terms of the determinants of the coefficient matrix and matrices formed by replacing columns
+                of the coefficient matrix.</p>
+
+            <h3>Theory:</h3>
+            <p>Consider a system of linear equations represented in matrix form as:</p>
+            <pre>
+        AX = B
+            </pre>
+            <p>where <em>A</em> is the coefficient matrix, <em>X</em> is the column vector of unknowns, and <em>B</em>
+                is the column vector of constants. Cramer’s Rule states that if the determinant of matrix <em>A</em>
+                (denoted as <em>det(A)</em>) is non-zero, the solution for each variable <em>x<sub>i</sub></em> in
+                vector <em>X</em> can be found using:</p>
+            <pre>
+        x<sub>i</sub> = frac{det(A<sub>i</sub>)}{det(A)}
+            </pre>
+            <p>where <em>A<sub>i</sub></em> is the matrix obtained by replacing the <em>i</em>-th column of <em>A</em>
+                with the vector <em>B</em>.</p>
+
+            <h3>Example:</h3>
+            <p>Consider the following system of equations:</p>
+            <pre>
+        2x + 3y = 8
+        4x + 5y = 18
+            </pre>
+            <p>This can be written in matrix form:</p>
+            <pre>
+        A = [2 3]
+            [4 5]
+        
+        X = [x]
+            [y]
+        
+        B = [8]
+            [18]
+            </pre>
+
+            <p>First, calculate the determinant of <em>A</em>:</p>
+            <pre>
+        det(A) = (2 * 5) - (3 * 4) = 10 - 12 = -2
+            </pre>
+
+            <p>Next, find <em>A<sub>1</sub></em> by replacing the first column of <em>A</em> with <em>B</em>:</p>
+            <pre>
+        A<sub>1</sub> = [8 3]
+                     [18 5]
+        
+        det(A<sub>1</sub>) = (8 * 5) - (3 * 18) = 40 - 54 = -14
+            </pre>
+
+            <p>Now, find <em>A<sub>2</sub></em> by replacing the second column of <em>A</em> with <em>B</em>:</p>
+            <pre>
+        A<sub>2</sub> = [2 8]
+                     [4 18]
+        
+        det(A<sub>2</sub>) = (2 * 18) - (8 * 4) = 36 - 32 = 4
+            </pre>
+
+            <p>Finally, calculate <em>x</em> and <em>y</em>:</p>
+            <pre>
+        x = det(A<sub>1</sub>) / det(A) = -14 / -2 = 7
+        y = det(A<sub>2</sub>) / det(A) = 4 / -2 = -2
+            </pre>
+            <p>Thus, the solution to the system of equations is:</p>
+            <pre>
+        x = 7, y = -2
+            </pre>
+
+            <h3>Properties of Cramer's Rule:</h3>
+            <ul>
+                <li><strong>Applicable only for square matrices:</strong> Cramer’s Rule can only be used for systems of
+                    equations where the number of equations equals the number of unknowns.</li>
+                <li><strong>Requires non-zero determinant:</strong> The determinant of the coefficient matrix must be
+                    non-zero for a unique solution to exist.</li>
+                <li><strong>Simple computation:</strong> Cramer’s Rule can be computationally intensive for large
+                    systems due to the need for multiple determinants.</li>
+            </ul>
+
+            <h3>Applications of Cramer's Rule:</h3>
+            <ul>
+                <li><strong>Solving Linear Systems:</strong> Cramer’s Rule is a straightforward method for finding the
+                    solutions of small linear systems.</li>
+                <li><strong>Theoretical Analysis:</strong> It is useful in theoretical contexts to demonstrate the
+                    existence of solutions in linear algebra.</li>
+            </ul>
+
+            <h3>Calculate Using Cramer's Rule:</h3>
+            <div>
+                <label for="cramerMatrix">Enter Coefficient Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="cramerMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <div>
+                <label for="cramerConstants">Enter Constants Vector (comma-separated):</label>
+                <textarea id="cramerConstants" rows="1" cols="20"></textarea>
+            </div>
+            <button onclick="calculateCramersRule()">Calculate using Cramer's Rule</button>
+            <pre id="cramerResult"></pre>
+        </section>
+
+        <section>
+            <h3>Calculate Transpose:</h3>
+            <div>
+                <label for="transposeMatrix">Enter Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="transposeMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateTranspose()">Calculate Transpose</button>
+            <pre id="transposeResult"></pre>
+        </section>
+
+
+
+
+
+
+        <section>
+            <h3>Calculate Inverse:</h3>
+            <div>
+                <label for="inverseMatrix">Enter Square Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="inverseMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateInverse()">Calculate Inverse</button>
+            <pre id="inverseResult"></pre>
+        </section>
+
+
+
+
+
+
+        <section>
+            <h3>Calculate Consistency:</h3>
+            <div>
+                <label for="consistencyMatrix">Enter Coefficient Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="consistencyMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <div>
+                <label for="consistencyConstants">Enter Constants Vector (comma-separated):</label>
+                <textarea id="consistencyConstants" rows="1" cols="20"></textarea>
+            </div>
+            <button onclick="checkConsistency()">Check Consistency</button>
+            <pre id="consistencyResult"></pre>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <section>
+            <h3>Calculate Rank of Matrix:</h3>
+            <div>
+                <label for="rankMatrix">Enter Matrix (comma-separated values, rows separated by semicolons):</label>
+                <textarea id="rankMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateRank()">Calculate Rank</button>
+            <pre id="rankResult"></pre>
+        </section>
+
+
+        <section>
+            <h3>Calculate Normal Form of Matrix:</h3>
+            <div>
+                <label for="normalFormMatrix">Enter Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="normalFormMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateNormalForm()">Calculate Normal Form</button>
+            <pre id="normalFormResult"></pre>
+            <pre id="normalFormSteps"></pre>
+        </section>
+
+
+        <section>
+            <h3>Calculate Eigenvalues and Eigenvectors:</h3>
+            <div>
+                <label for="eigenMatrix">Enter Square Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="eigenMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateEigen()">Calculate Eigenvalues and Eigenvectors</button>
+            <pre id="eigenResult"></pre>
+            <div id="eigenSteps"></div>
+        </section>
+
+        <section>
+            <h3>Calculate Diagonal Form of Matrix:</h3>
+            <div>
+                <label for="diagonalMatrix">Enter Square Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="diagonalMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateDiagonalForm()">Calculate Diagonal Form</button>
+            <pre id="diagonalFormResult"></pre>
+        </section>
+
+
+        <section>
+            <h3>Reduce Quadratic Form to Canonical Form:</h3>
+            <div>
+                <label for="quadraticMatrix">Enter Square Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="quadraticMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateCanonicalForm()">Reduce to Canonical Form</button>
+            <pre id="canonicalFormResult"></pre>
+        </section>
+
+
+        <section>
+            <h3>Calculate Nature, Index, Signature of Quadratic Form:</h3>
+            <div>
+                <label for="quadraticFormMatrix">Enter Square Matrix (comma-separated values, rows separated by
+                    semicolons):</label>
+                <textarea id="quadraticFormMatrix" rows="3" cols="20"></textarea>
+            </div>
+            <button onclick="calculateNatureIndexSignature()">Calculate Nature, Index, Signature</button>
+            <pre id="natureIndexSignatureResult"></pre>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <button class="home-btn" onclick="window.location.href='../../index.html'">Home</button>
+    </main>
+
+
+</body>
+
+</html>
